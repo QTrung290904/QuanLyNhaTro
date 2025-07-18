@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.StudentFormController" alignment="CENTER" padding="20">
+    <Label text="Nhập thông tin sinh viên" style="-fx-font-size: 18;" />
+
+    <TextField fx:id="txtMaSV" promptText="Mã sinh viên" />
+    <TextField fx:id="txtHoTen" promptText="Họ tên" />
+    <TextField fx:id="txtNgaySinh" promptText="Ngày sinh (yyyy-mm-dd)" />
+    <TextField fx:id="txtKhoa" promptText="Khoa" />
+    <TextField fx:id="txtKhoaHoc" promptText="Khóa học" />
+    <TextField fx:id="txtLop" promptText="Lớp" />
+
+    <Button text="Thêm sinh viên" onAction="#handleAdd" />
+    <Button text="Tìm theo khoa" onAction="#handleSearchByKhoa" />
+    <TextField fx:id="txtSearchKhoa" promptText="Nhập tên khoa để tìm" />
+
+    <TextArea fx:id="resultArea" prefHeight="200" prefWidth="400" editable="false" />
+</VBox>

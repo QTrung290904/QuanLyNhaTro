@@ -2,30 +2,19 @@ package model;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
+import javafx.scene.Parent;
 
 public class Main extends Application {
     @Override
-    public void start(Stage primaryStage) {
-        try {
-            // Kết nối MySQL
-            Database.connect();
+    public void start(Stage primaryStage) throws Exception {
+        Database.connect(); // Kết nối trước để chắc chắn
 
-            // Load giao diện đăng nhập
-            Parent root = FXMLLoader.load(getClass().getResource("/view/login.fxml"));
-
-            primaryStage.setTitle("Đăng nhập hệ thống");
-            primaryStage.setScene(new Scene(root, 400, 300));
-            primaryStage.show();
-        } catch (IOException e) {
-            System.err.println("❌ Lỗi khi tải login.fxml: " + e.getMessage());
-        } catch (Exception e) {
-            System.err.println("❌ Lỗi khởi động ứng dụng: " + e.getMessage());
-        }
+        Parent root = FXMLLoader.load(getClass().getResource("/view/student_form.fxml"));
+        primaryStage.setTitle("Quản lý sinh viên");
+        primaryStage.setScene(new Scene(root, 500, 600));
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
